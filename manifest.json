@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Boilerplate Extension TN-2026",
+  "version": "0.1.0",
+  "description": "A feature-rich Chrome extension boilerplate.",
+  "permissions": ["storage", "contextMenus"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/content/index.ts"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_page": "src/pages/options/index.html"
+}
